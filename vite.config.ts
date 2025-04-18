@@ -14,8 +14,8 @@ export default defineConfig({
   server: {
     port: 3000, // 프론트 포트 번호
     proxy: {
-      "/": {
-        target: "http://localhost:5000", // 서버 주소
+      "/api": {
+        target: "http://localhost:8080", // 서버 주소
         changeOrigin: true,
       }
     },
