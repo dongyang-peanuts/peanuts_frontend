@@ -1,0 +1,23 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import path from 'path'
+
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: { // src 별칭 -> @
+      "@": path.resolve(__dirname, "./src")
+    },
+  },
+  server: {
+    port: 3000, // 프론트 포트 번호
+    proxy: {
+      "/": {
+        target: "http://localhost:5000", // 서버 주소
+        changeOrigin: true,
+      }
+    },
+  },
+});

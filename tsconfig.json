@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "strict": true,
+    "moduleDetection": "force",
+    "strictNullChecks": false,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+
+    "outDir": "dist",
+    "target": "ESNext",
+    "module": "ESNext",
+
+    "baseUrl": "./", // src 기준
+    "paths": { 
+      "@/*": ["src/*"] // src/*를 @로 별칭
+    },
+  },
+
+  "include": ["src"],
+}
