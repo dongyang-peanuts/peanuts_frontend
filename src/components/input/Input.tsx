@@ -7,7 +7,7 @@ interface Input {
 const Input = ({ width, height, placeholder }: Input) => {
   return (
     <input
-      className="border border-solid border-[#d9d9d9]"
+      className="border border-solid border-[#d9d9d9] pl-[8px] placeholder-[#d9d9d9]"
       style={{
         width: width,
         height: height,

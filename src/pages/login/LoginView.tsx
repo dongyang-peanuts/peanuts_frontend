@@ -3,26 +3,28 @@ import Input from "@/components/input/Input";
 
 const LoginView = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center mt-[150px] focus:border-none">
       <div className="w-[356px] h-[420px]">
-        <p className="text-center text-[#6a9850] font-bold text-2xl">로그인</p>
+        <p className="text-center text-[#6a9850] font-[700] text-[24px] mt-[0] mb-[44px]">
+          로그인
+        </p>
         <div className="w-[356px] h-[3px] bg-[#6a9850]"></div>
         <div>
-          <div className="text-sm text-[#707070] mt-[32px] mb-[8px]">
+          <div className="text-[14px] text-[#707070] mt-[32px] mb-[8px]">
             아이디
           </div>
           <Input
-            width="348px"
+            width="340px"
             height="44px"
             placeholder="아이디를 입력해주세요."
           />
         </div>
         <div>
-          <div className="text-sm text-[#707070] mt-[27px] mb-[8px]">
+          <div className="text-[14px] text-[#707070] mt-[27px] mb-[8px]">
             비밀번호
           </div>
           <Input
-            width="348px"
+            width="340px"
             height="44px"
             placeholder="비밀번호를 입력해주세요."
           />

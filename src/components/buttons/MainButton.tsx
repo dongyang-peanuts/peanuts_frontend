@@ -17,6 +17,7 @@ const MainButton = ({
 }: MainButton) => {
   return (
     <button
+      className="font-[700] text-[16px]"
       style={{
         color: color,
         border:
