@@ -5,6 +5,7 @@ interface MainButton {
   backgroundColor: string;
   width: string;
   height: string;
+  onClick: () => void;
 }
 
 const MainButton = ({
@@ -14,6 +15,7 @@ const MainButton = ({
   backgroundColor,
   width,
   height,
+  onClick,
 }: MainButton) => {
   return (
     <button
@@ -26,6 +28,7 @@ const MainButton = ({
         width: width,
         height: height,
       }}
+      onClick={onClick}
     >
       {text}
     </button>

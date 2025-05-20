@@ -1,7 +1,12 @@
 import MainButton from "@/components/buttons/MainButton";
 import Input from "@/components/input/Input";
 
-const LoginView = () => {
+interface loginView {
+  loginState: boolean;
+  navigate: (address: string) => void;
+}
+
+const LoginView = ({ loginState, navigate }: loginView) => {
   return (
     <div className="flex justify-center mt-[150px] focus:border-none">
       <div className="w-[356px] h-[420px]">
@@ -18,6 +23,9 @@ const LoginView = () => {
             height="44px"
             placeholder="아이디를 입력해주세요."
           />
+          <div className="text-[10px] mt-[6px] text-[#EA4335] ">
+            *아이디가 일치하지 않습니다.
+          </div>
         </div>
         <div>
           <div className="text-[14px] text-[#707070] mt-[27px] mb-[8px]">
@@ -28,6 +36,9 @@ const LoginView = () => {
             height="44px"
             placeholder="비밀번호를 입력해주세요."
           />
+          <div className="text-[10px] mt-[6px] text-[#EA4335] ">
+            *아이디가 일치하지 않습니다.
+          </div>
         </div>
         <div className="mt-[34px] mb-[13px]">
           <MainButton
@@ -37,6 +48,7 @@ const LoginView = () => {
             text="로그인"
             color="white"
             borderColor="none"
+            onClick={() => console.log("로그인")}
           />
         </div>
         <div>
@@ -47,6 +59,9 @@ const LoginView = () => {
             text="회원가입"
             color="#6a9850"
             borderColor="#6a9850"
+            onClick={() => {
+              navigate("/register");
+            }}
           />
         </div>
       </div>

@@ -1,7 +1,9 @@
+import Header from "@/components/Header";
+
 const AllMonitoringView = () => {
   return (
     <div>
-      <div></div>
+      <Header />
     </div>
   );
 };
