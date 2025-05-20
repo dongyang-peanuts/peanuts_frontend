@@ -1,10 +1,12 @@
 const Header = () => {
   return (
-    <div className="flex justify-between">
-      <div>LOGO</div>
-      <div>
-        <div>대시보드</div>
-        <div>로그아웃</div>
+    <div>
+      <div className="flex justify-between max-w-[1140px] m-auto">
+        <div>LOGO</div>
+        <div className="flex">
+          <li>대시보드</li>
+          <li>로그아웃</li>
+        </div>
       </div>
     </div>
   );
