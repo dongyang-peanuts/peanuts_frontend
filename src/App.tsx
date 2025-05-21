@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import LoginContainer from "./pages/login/LoginContainer";
 import RegisterContainer from "./pages/register/RegisterContainer";
 import AllMonitoringContainer from "./pages/all- monitoring/AllMonitoringContainer";
