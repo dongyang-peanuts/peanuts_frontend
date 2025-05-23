@@ -15,7 +15,7 @@ const LoginView = ({ loginState, navigate }: loginView) => {
         </p>
         <div className="w-[356px] h-[3px] bg-[#6a9850]"></div>
         <div>
-          <div className="text-[14px] text-[#707070] mt-[34px] mb-[8px]">
+          <div className="text-sm text-[#707070] mt-[34px] mb-[8px]">
             아이디
           </div>
           <Input

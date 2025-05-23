@@ -14,10 +14,10 @@
     "module": "ESNext",
 
     "baseUrl": "./", // src 기준
-    "paths": { 
+    "paths": {
       "@/*": ["src/*"] // src/*를 @로 별칭
-    },
+    }
   },
 
-  "include": ["src"],
+  "include": ["src"]
 }
