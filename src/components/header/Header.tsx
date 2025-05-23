@@ -1,7 +1,7 @@
 const Header = () => {
   return (
-    <div>
-      <div className="flex justify-between max-w-[1140px] m-auto">
+    <div className="m-[0px]">
+      <div className="flex justify-between max-w-[1140px] m-auto h-[56px]">
         <div>LOGO</div>
         <div className="flex">
           <li>대시보드</li>
