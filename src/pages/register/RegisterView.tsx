@@ -22,12 +22,12 @@ const RegisterView = ({ navigate }: RegisterView) => {
             height="44px"
             placeholder="아이디를 입력해주세요."
           />
-          <div className="text-[10px] mt-[6px] text-[#EA4335] ">
+          <div className="text-[10px] mt-[6px] text-[#EA4335] h-[10px]">
             *이미 존재하는 아이디입니다.
           </div>
         </div>
         <div>
-          <div className="text-[14px] text-[#707070] mt-[27px] mb-[8px]">
+          <div className="text-[14px] text-[#707070] mt-[11px] mb-[8px]">
             비밀번호 <span className="text-[#ff0000]">*</span>
           </div>
           <Input
@@ -35,12 +35,12 @@ const RegisterView = ({ navigate }: RegisterView) => {
             height="44px"
             placeholder="비밀번호를 입력해주세요."
           />
-          <div className="text-[10px] mt-[6px] text-[#EA4335] ">
+          <div className="text-[10px] mt-[6px] text-[#EA4335] h-[10px]">
             *비밀번호를 작성해주세요.
           </div>
         </div>
         <div>
-          <div className="text-[14px] text-[#707070] mt-[27px] mb-[8px]">
+          <div className="text-[14px] text-[#707070] mt-[11px] mb-[8px]">
             비밀번호 확인 <span className="text-[#ff0000]">*</span>
           </div>
           <Input
@@ -48,7 +48,7 @@ const RegisterView = ({ navigate }: RegisterView) => {
             height="44px"
             placeholder="비밀번호를 한번 더 입력해주세요."
           />
-          <div className="text-[10px] mt-[6px] text-[#EA4335] ">
+          <div className="text-[10px] mt-[6px] text-[#EA4335]  h-[10px]">
             *비밀번호가 일치하지 않습니다.
           </div>
         </div>
@@ -57,9 +57,10 @@ const RegisterView = ({ navigate }: RegisterView) => {
             width="546px"
             height="48px"
             backgroundColor="#6a9850"
-            text="로그인"
+            text="회원가입"
             color="white"
             borderColor="none"
+            onClick={null}
           />
         </div>
         <p
