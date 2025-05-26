@@ -1,8 +1,32 @@
 import MainButton from "@/components/buttons/MainButton";
 import BottomHeader from "@/components/header/BottomHeader";
 import Header from "@/components/header/Header";
-import Input from "@/components/input/Input";
+import TableBody from "@/components/table/TableBody";
 import TableHeader from "@/components/table/TableHeader";
+
+const data = [
+  {
+    id: 1,
+    email: "chhari0708@naver.com",
+    address: "서울특별시 동작구 대방동 7길 31, 302호",
+    adviceNo: "F1203C4Ac",
+    createdAt: "2024.04.18",
+  },
+  {
+    id: 2,
+    email: "chhari0708@naver.com",
+    address: "서울특별시 동작구 대방동 7길 31, 302호",
+    adviceNo: "F1203C4Ac",
+    createdAt: "2024.04.18",
+  },
+  {
+    id: 3,
+    email: "chhari0708@naver.com",
+    address: "서울특별시 동작구 대방동 7길 31, 302호",
+    adviceNo: "F1203C4Ac",
+    createdAt: "2024.04.18",
+  },
+];
 
 const UserInfoView = () => {
   return (
@@ -30,6 +54,9 @@ const UserInfoView = () => {
           <div>
             <table>
               <TableHeader data={["이메일", "주소", "기기번호", "가입일"]} />
+              {data.map((item) => (
+                <TableBody data={item} />
+              ))}
             </table>
           </div>
         </div>
