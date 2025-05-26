@@ -5,7 +5,7 @@ const AllMonitoringView = () => {
   return (
     <div>
       <Header />
-      <BottomHeader />
+      <BottomHeader page="all" />
     </div>
   );
 };

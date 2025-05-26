@@ -8,21 +8,25 @@ import UserInfoDetailContainer from "./pages/userInfoDetail/UserInfoDetailContai
 
 function App() {
   return (
-    <Routes>
-      {/*로그인 화면 - 시작화면 */}
-      <Route path="/" element={<LoginContainer />} />
-      {/* 회원가입 화면*/}
-      <Route path="/register" element={<RegisterContainer />} />
-      {/*전체 모니터링*/}
-      <Route path="/all-monitoring" element={<AllMonitoringContainer />} />
-      <Route
-        path="/all-monitoring/detail"
-        element={<MonitoringDetailContainer />}
-      />
-      {/*사용자 정보*/}
-      <Route path="/userinfo" element={<UserInfoContainer />} />
-      <Route path="/userinfo/detail" element={<UserInfoDetailContainer />} />
-    </Routes>
+    <>
+      <Routes>
+        {/*로그인 화면 - 시작화면 */}
+        <Route path="/" element={<LoginContainer />} />
+        {/* 회원가입 화면*/}
+        <Route path="/register" element={<RegisterContainer />} />
+      </Routes>
+      <Routes>
+        {/*전체 모니터링*/}
+        <Route path="/all-monitoring" element={<AllMonitoringContainer />} />
+        <Route
+          path="/all-monitoring/detail"
+          element={<MonitoringDetailContainer />}
+        />
+        {/*사용자 정보*/}
+        <Route path="/userinfo" element={<UserInfoContainer />} />
+        <Route path="/userinfo/detail" element={<UserInfoDetailContainer />} />
+      </Routes>
+    </>
   );
 }
 

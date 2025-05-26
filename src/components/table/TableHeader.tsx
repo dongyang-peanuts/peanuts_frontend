@@ -1,8 +1,23 @@
-const TableHeader = () => {
+interface TableHeader {
+  data: Array<string>;
+}
+
+const TableHeader = ({ data }: TableHeader) => {
   return (
-    <div>
-      <table></table>
-    </div>
+    <thead>
+      <tr>
+        <th>
+          <input
+            type="checkbox"
+            // checked={isAllChecked}
+            // onChange={(e) => onCheckAll(e.target.checked)}
+          />
+        </th>
+        {data.map((item) => (
+          <th>{item}</th>
+        ))}
+      </tr>
+    </thead>
   );
 };
 

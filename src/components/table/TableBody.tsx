@@ -1,8 +1,8 @@
 const TableBody = () => {
   return (
-    <div>
-      <div></div>
-    </div>
+    <tr>
+      <td></td>
+    </tr>
   );
 };
 
