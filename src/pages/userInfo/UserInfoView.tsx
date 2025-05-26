@@ -30,12 +30,14 @@ const data = [
 
 const UserInfoView = () => {
   return (
-    <div>
+    <div className="bg-[#F6F7FB]">
       <Header />
       <BottomHeader page="info" />
       <div>
         <div className="w-[1116px] m-auto">
-          <div>전체 사용자 정보 조회</div>
+          <div className="font-bold text-2xl mt-[34px] mb-[14px]">
+            전체 사용자 정보 조회
+          </div>
           <div className="flex">
             <div className="border w-[926px] h-14 mr-6"></div>
             <MainButton
@@ -52,7 +54,7 @@ const UserInfoView = () => {
             삭제
           </button>
           <div>
-            <table>
+            <table className="w-[1116px] ">
               <TableHeader data={["이메일", "주소", "기기번호", "가입일"]} />
               {data.map((item) => (
                 <TableBody data={item} />

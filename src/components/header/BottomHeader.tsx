@@ -9,7 +9,7 @@ const BottomHeader = ({ page }: BottomHeader) => {
 
   console.log(window.location.href);
   return (
-    <div className="border-b">
+    <div className="border-b bg-white">
       <div className="flex justify-between  max-w-[1116px] m-auto h-[81px]">
         <div className="flex items-center">
           <li

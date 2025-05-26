@@ -5,7 +5,7 @@ interface TableHeader {
 const TableHeader = ({ data }: TableHeader) => {
   return (
     <thead>
-      <tr>
+      <tr className="bg-[#E4EFE7]">
         <th>
           <input
             type="checkbox"

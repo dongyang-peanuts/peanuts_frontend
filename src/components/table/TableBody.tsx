@@ -6,7 +6,7 @@ interface PropsType {
 
 const TableBody = ({ data }: PropsType) => {
   return (
-    <tbody>
+    <tbody className="bg-white">
       <tr>
         <td>
           <input type="checkbox" />
