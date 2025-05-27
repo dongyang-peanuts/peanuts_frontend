@@ -3,9 +3,10 @@ import Header from "@/components/header/Header";
 
 const AllMonitoringView = () => {
   return (
-    <div>
+    <div className="bg-[#F6F7FB] min-h-screen">
       <Header />
       <BottomHeader page="all" />
+      <div></div>
     </div>
   );
 };
