@@ -43,12 +43,18 @@ const MonitoringDetailView = () => {
       <div className="w-[1116px] m-auto">
         <div className="flex mt-[47px]">
           <div className="w-[546px] h-[404px] bg-black"></div>
-          <div>
-            <div></div>
+          <div className="ml-6">
+            <div className="w-[241px] h-6 mb-[21px]">
+              <input type="date" />
+            </div>
             {data.map((item) => (
               <HistoryItem data={item} />
             ))}
           </div>
+        </div>
+        <div className="mt-[37px] ">
+          <div className="font-bold text-xl mb-[11px]">환자 정보</div>
+          <div className="max-w-[1116px] bg-white h-[212px] rounded-lg border bordee-[#d9d9d9] shadow-md"></div>
         </div>
       </div>
     </div>

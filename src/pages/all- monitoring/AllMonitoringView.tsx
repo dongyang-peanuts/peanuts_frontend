@@ -1,5 +1,6 @@
 import BottomHeader from "@/components/header/BottomHeader";
 import Header from "@/components/header/Header";
+import InfoModal from "@/components/modal/InfoModal";
 
 const AllMonitoringView = () => {
   return (
@@ -7,6 +8,7 @@ const AllMonitoringView = () => {
       <Header />
       <BottomHeader page="all" />
       <div></div>
+      <InfoModal />
     </div>
   );
 };
