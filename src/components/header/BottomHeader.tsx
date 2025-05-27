@@ -6,8 +6,6 @@ interface BottomHeader {
 
 const BottomHeader = ({ page }: BottomHeader) => {
   const navigate = useNavigate();
-
-  console.log(window.location.href);
   return (
     <div className="border-b bg-white">
       <div className="flex justify-between  max-w-[1116px] m-auto h-[81px]">
