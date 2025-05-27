@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import AllMonitoringView from "./AllMonitoringView";
 
 const AllMonitoringContainer = () => {
-  return <AllMonitoringView />;
+  const navigate = useNavigate();
+  return <AllMonitoringView navigate={navigate} />;
 };
 
 export default AllMonitoringContainer;
