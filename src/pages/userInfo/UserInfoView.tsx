@@ -153,8 +153,12 @@ const data = [
     },
   ],
 ];
+interface PropsType {
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
+}
 
-const UserInfoView = () => {
+const UserInfoView = ({ currentPage, setCurrentPage }: PropsType) => {
   return (
     <div className="bg-[#F6F7FB] min-h-screen pb-14">
       <Header />
@@ -193,7 +197,11 @@ const UserInfoView = () => {
               ))}
             </table>
           </div>
-          <PageNation page={3} />
+          <PageNation
+            totalPages={5}
+            currentPage={currentPage}
+            onPageChange={(page) => setCurrentPage(page)}
+          />
         </div>
       </div>
     </div>
