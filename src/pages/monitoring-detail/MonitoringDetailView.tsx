@@ -3,6 +3,9 @@ import Header from "@/components/header/Header";
 import HistoryItem from "@/components/HistoryItem";
 import Pagination from "@/components/PageNation";
 
+import ArrowLeft from "@/assets/icons/ArrowLeftBlack.png";
+import ArrowRight from "@/assets/icons/ArrowRightBlack.png";
+
 const data = [
   {
     id: 1,
@@ -55,7 +58,8 @@ const MonitoringDetailView = ({
         <div className="flex mt-[47px]">
           <div className="w-[546px] h-[404px] bg-black"></div>
           <div className="ml-6">
-            <div className="w-[241px] h-6 mb-[21px] text-xl font-bold">
+            <div className="flex items-center w-[241px] h-6 mb-[21px] text-xl font-bold">
+              <img className="w-6" src={ArrowLeft} />
               {date.getFullYear() +
                 "년 " +
                 (date.getMonth() + 1) +
@@ -63,6 +67,7 @@ const MonitoringDetailView = ({
                 date.getDay() +
                 "일 "}
               <input type="date" className="hidden" />
+              <img className="w-6" src={ArrowRight} />
             </div>
             {data.map((item) => (
               <HistoryItem data={item} />
@@ -122,7 +127,7 @@ const MonitoringDetailView = ({
             <div className="flex flex-col justify-between mr-[33px]">
               <div className="flex text-sm font-bold">
                 <p className="w-[88px] text-center mr-[34px]">복용중인 약</p>
-                <p className="">
+                <p className="w-[400px] overflow-hidden text-ellipsis whitespace-nowrap">
                   이부프로펜(Advil), 나프록센(Aleve), 멜록시캄(Mobic),
                   셀레콕시브(Celebrex)
                 </p>
