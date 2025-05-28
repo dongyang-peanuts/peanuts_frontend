@@ -168,7 +168,7 @@ const UserInfoView = () => {
             <div className="border w-[926px] h-14 mr-6 border-[#d9d9d9] flex items-center pr-4">
               <input
                 type="text"
-                className="border-none w-[100%] h-[55px] outline-none bg-[#F6F7FB] border pl-2"
+                className="border-none w-[100%] h-[48px] outline-none bg-[#F6F7FB] border pl-2"
               />
               <img src={SearchIcon} className="w-7 h-7 " />
             </div>

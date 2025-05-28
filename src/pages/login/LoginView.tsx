@@ -19,8 +19,8 @@ const LoginView = ({ loginState, navigate }: loginView) => {
             아이디
           </div>
           <Input
-            width="340px"
-            height="44px"
+            width="356px"
+            height="48px"
             placeholder="아이디를 입력해주세요."
           />
           <div className="text-[10px] mt-[6px] text-[#EA4335] h-[10px]">
@@ -32,8 +32,8 @@ const LoginView = ({ loginState, navigate }: loginView) => {
             비밀번호
           </div>
           <Input
-            width="340px"
-            height="44px"
+            width="356px"
+            height="48px"
             placeholder="비밀번호를 입력해주세요."
           />
           <div className="text-[10px] mt-[6px] text-[#EA4335] h-[10px]">

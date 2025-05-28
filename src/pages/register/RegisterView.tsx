@@ -31,8 +31,8 @@ const RegisterView = ({ navigate }: RegisterView) => {
             비밀번호 <span className="text-[#ff0000]">*</span>
           </div>
           <Input
-            width="534px"
-            height="44px"
+            width="546px"
+            height="48px"
             placeholder="비밀번호를 입력해주세요."
           />
           <div className="text-[10px] mt-[6px] text-[#EA4335] h-[10px]">
@@ -44,8 +44,8 @@ const RegisterView = ({ navigate }: RegisterView) => {
             비밀번호 확인 <span className="text-[#ff0000]">*</span>
           </div>
           <Input
-            width="534px"
-            height="44px"
+            width="546px"
+            height="48px"
             placeholder="비밀번호를 한번 더 입력해주세요."
           />
           <div className="text-[10px] mt-[6px] text-[#EA4335]  h-[10px]">

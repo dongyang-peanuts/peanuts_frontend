@@ -100,33 +100,33 @@ const UserInfoDetailView = () => {
             </div>
             <div className="mr-[72px]">
               <div className="flex mb-[21px]">
-                <div className="text-base text-[#5d5d5d] w-[64px] mr-[102px]">
+                <div className="text-base text-[#5d5d5d] w-[70px] mr-[102px]">
                   낙상 횟수
                 </div>
                 <div className="w-[45px]">3회</div>
               </div>
               <div className="flex mb-[21px]">
-                <div className="text-base text-[#5d5d5d] w-[64px] mr-[102px]">
+                <div className="text-base text-[#5d5d5d] w-[70px] mr-[102px]">
                   중증도
                 </div>
                 <div className="w-[45px]">중증</div>
               </div>
               <div className="flex mb-[21px]">
-                <div className="text-base text-[#5d5d5d] w-[64px] mr-[102px]">
+                <div className="text-base text-[#5d5d5d] w-[70px] mr-[102px]">
                   거동 상태
                 </div>
-                <div className="w-[45px]">휠체어</div>
+                <div className="w-[50px]">휠체어</div>
               </div>
             </div>
             <div>
               <div className="flex mb-[21px]">
-                <div className="text-base text-[#5d5d5d] w-[64px] mr-[102px]">
+                <div className="text-base text-[#5d5d5d] w-[70px] mr-[102px]">
                   욕창 횟수
                 </div>
                 <div>3회</div>
               </div>
               <div className="flex mb-[21px]">
-                <div className="text-base text-[#5d5d5d] w-[64px] mr-[102px]">
+                <div className="text-base text-[#5d5d5d] w-[70px] mr-[102px]">
                   운동 시간
                 </div>
                 <div>75분</div>
