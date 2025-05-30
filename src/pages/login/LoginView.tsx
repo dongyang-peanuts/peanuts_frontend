@@ -33,8 +33,8 @@ const LoginView = ({
             width="356px"
             height="48px"
             placeholder="아이디를 입력해주세요."
-            name="userEmail"
-            type="email"
+            name="adminId"
+            type="text"
             onChange={(e) => {
               setData({ ...data, [e.target.name]: e.target.value });
             }}
@@ -51,7 +51,7 @@ const LoginView = ({
             width="356px"
             height="48px"
             placeholder="비밀번호를 입력해주세요."
-            name="userPwd"
+            name="adminPwd"
             type="password"
             onChange={(e) => {
               setData({ ...data, [e.target.name]: e.target.value });

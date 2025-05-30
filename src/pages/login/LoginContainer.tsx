@@ -16,6 +16,7 @@ const LoginContainer = () => {
       })
       .then((res) => {
         console.log(res);
+        navigate("/all-monitoring");
       })
       .catch((err) => {
         console.log(err);
