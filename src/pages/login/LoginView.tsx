@@ -1,12 +1,23 @@
 import MainButton from "@/components/buttons/MainButton";
 import Input from "@/components/input/Input";
+import AdminInfo from "@/models/userInfo.model";
+import * as React from "react";
 
-interface loginView {
+interface PropsType {
   loginState: boolean;
   navigate: (address: string) => void;
+  data: AdminInfo | undefined;
+  setData: React.Dispatch<React.SetStateAction<AdminInfo | undefined>>;
+  login: () => void;
 }
 
-const LoginView = ({ loginState, navigate }: loginView) => {
+const LoginView = ({
+  loginState,
+  navigate,
+  data,
+  setData,
+  login,
+}: PropsType) => {
   return (
     <div className="flex justify-center mt-[150px] focus:border-none">
       <div className="w-[356px] h-[423px]">
@@ -22,6 +33,11 @@ const LoginView = ({ loginState, navigate }: loginView) => {
             width="356px"
             height="48px"
             placeholder="아이디를 입력해주세요."
+            name="userEmail"
+            type="email"
+            onChange={(e) => {
+              setData({ ...data, [e.target.name]: e.target.value });
+            }}
           />
           <div className="text-[10px] mt-[6px] text-[#EA4335] h-[10px]">
             {loginState ? "*아이디가 일치하지 않습니다." : "\u00A0"}
@@ -35,6 +51,11 @@ const LoginView = ({ loginState, navigate }: loginView) => {
             width="356px"
             height="48px"
             placeholder="비밀번호를 입력해주세요."
+            name="userPwd"
+            type="password"
+            onChange={(e) => {
+              setData({ ...data, [e.target.name]: e.target.value });
+            }}
           />
           <div className="text-[10px] mt-[6px] text-[#EA4335] h-[10px]">
             {loginState ? "*비밀번호가 일치하지 않습니다." : "\u00A0"}
@@ -48,9 +69,7 @@ const LoginView = ({ loginState, navigate }: loginView) => {
             text="로그인"
             color="white"
             borderColor="none"
-            onClick={() => {
-              navigate("all-monitoring");
-            }}
+            onClick={login}
           />
         </div>
         <div>

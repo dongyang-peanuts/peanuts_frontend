@@ -1,3 +1,6 @@
+import arrowLeft from "@/assets/icons/arrowLeft.png";
+import arrowRight from "@/assets/icons/arrowRight.png";
+
 interface PropsType {
   totalPages: number;
   currentPage: number;
@@ -21,17 +24,15 @@ const Pagination = ({ totalPages, currentPage, onPageChange }: PropsType) => {
 
   return (
     <div className="flex justify-center items-center py-4 space-x-2 text-sm text-gray-400">
-      <button
+      <img
+        src={arrowLeft}
         onClick={handlePrevious}
-        disabled={currentPage === 1}
-        className={`px-2 ${
+        className={`px-2 h-[19px] ${
           currentPage === 1
             ? "cursor-not-allowed text-gray-300"
             : "hover:text-gray-600"
         }`}
-      >
-        &lt;
-      </button>
+      />
 
       {pages.map((page) => (
         <button
@@ -47,17 +48,15 @@ const Pagination = ({ totalPages, currentPage, onPageChange }: PropsType) => {
         </button>
       ))}
 
-      <button
+      <img
+        src={arrowRight}
         onClick={handleNext}
-        disabled={currentPage === totalPages}
-        className={`px-2 ${
+        className={`px-2 h-[19px] ${
           currentPage === totalPages
             ? "cursor-not-allowed text-gray-300"
             : "hover:text-gray-600"
         }`}
-      >
-        &gt;
-      </button>
+      />
     </div>
   );
 };
