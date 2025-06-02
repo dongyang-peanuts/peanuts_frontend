@@ -16,7 +16,9 @@
     "baseUrl": "./", // src 기준
     "paths": {
       "@/*": ["src/*"] // src/*를 @로 별칭
-    }
+    },
+
+    "types": ["node", "vite/client"]
   },
 
   "include": ["src"]

@@ -11,11 +11,12 @@ const LoginContainer = () => {
 
   const login = () => {
     axios
-      .post("http://kongback.kro.kr:8080/admin/login", data, {
+      .post("/admin/login", data, {
         withCredentials: true,
       })
       .then((res) => {
         console.log(res);
+        sessionStorage.setItem("id", data.adminId);
         navigate("/all-monitoring");
       })
       .catch((err) => {

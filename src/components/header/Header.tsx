@@ -1,4 +1,10 @@
+import axios from "axios";
+
 const Header = () => {
+  const logOut = () => {
+    // axios.post();
+  };
+
   return (
     <div className="m-[0px] border-b bg-white">
       <div className="flex justify-between items-center max-w-[1116px] m-auto h-[56px]">
