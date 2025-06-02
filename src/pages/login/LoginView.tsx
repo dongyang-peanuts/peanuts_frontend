@@ -4,20 +4,14 @@ import AdminInfo from "@/models/userInfo.model";
 import * as React from "react";
 
 interface PropsType {
-  loginState: boolean;
   navigate: (address: string) => void;
   data: AdminInfo | undefined;
   setData: React.Dispatch<React.SetStateAction<AdminInfo | undefined>>;
   login: () => void;
+  idState: boolean;
 }
 
-const LoginView = ({
-  loginState,
-  navigate,
-  data,
-  setData,
-  login,
-}: PropsType) => {
+const LoginView = ({ navigate, data, setData, login, idState }: PropsType) => {
   return (
     <div className="flex justify-center mt-[150px] focus:border-none">
       <div className="w-[356px] h-[423px]">
@@ -40,7 +34,7 @@ const LoginView = ({
             }}
           />
           <div className="text-[10px] mt-[6px] text-[#EA4335] h-[10px]">
-            {loginState ? "*아이디가 일치하지 않습니다." : "\u00A0"}
+            {idState ? "*존재하지 않은 아이디입니다." : "\u00A0"}
           </div>
         </div>
         <div>
@@ -58,7 +52,7 @@ const LoginView = ({
             }}
           />
           <div className="text-[10px] mt-[6px] text-[#EA4335] h-[10px]">
-            {loginState ? "*비밀번호가 일치하지 않습니다." : "\u00A0"}
+            {/* {loginState ? "*비밀번호가 일치하지 않습니다." : "\u00A0"} */}
           </div>
         </div>
         <div className="mt-[16px] mb-[13px]">

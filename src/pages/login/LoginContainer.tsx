@@ -5,9 +5,9 @@ import { useState } from "react";
 import AdminInfo from "@/models/userInfo.model";
 
 const LoginContainer = () => {
-  const loginState = false;
-  const navigate = useNavigate();
   const [data, setData] = useState<AdminInfo | undefined>();
+  const [idState, setIdState] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const login = () => {
     axios
@@ -19,13 +19,16 @@ const LoginContainer = () => {
         navigate("/all-monitoring");
       })
       .catch((err) => {
+        if (err.status === 400) {
+          setIdState(true);
+        }
         console.log(err);
       });
   };
   return (
     <LoginView
       navigate={navigate}
-      loginState={loginState}
+      idState={idState}
       data={data}
       setData={setData}
       login={login}

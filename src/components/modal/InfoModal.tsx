@@ -2,7 +2,7 @@ import img from "../../assets/img/image (2).png";
 
 const InfoModal = () => {
   return (
-    <div>
+    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
       <div className="bg-white w-[387px] h-[71px] rounded-xl shadow-md mb-3 text-[15px] flex items-center pl-4">
         <div>
           <p className="mb-[7px]">서울특별시 동작구 대방동 7길 31, 302호</p>

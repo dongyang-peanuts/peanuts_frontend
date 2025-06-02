@@ -4,26 +4,42 @@ import InfoModal from "@/components/modal/InfoModal";
 import img from "@/assets/img/image (2).png";
 import ArrowRight from "@/assets/icons/arrowRight.png";
 import ArrowLeft from "@/assets/icons/arrowLeft.png";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-import { Map } from "react-kakao-maps-sdk";
+import { CustomOverlayMap, Map, MapMarker } from "react-kakao-maps-sdk";
 
 interface PropsType {
   navigate: (address: string) => void;
 }
 
 const AllMonitoringView = ({ navigate }: PropsType) => {
+  const [visible, setVisible] = useState<boolean>(false);
+
+  const markerPosition = {
+    lat: 37.5665,
+    lng: 126.978,
+  };
   return (
     <div className="bg-[#F6F7FB] min-h-screen">
       <Header />
       <BottomHeader page="all" />
-      <div className="relative">
+      <div className="relative w-full">
         <Map
           center={{ lat: 37.450701, lng: 127.570667 }}
-          style={{ width: "100%", height: "100vh" }}
+          style={{ width: "100%", height: "83.3vh" }}
           level={10}
-        />
-        <div className="absolute m-auto flex items-center">
+        >
+          <MapMarker
+            position={markerPosition}
+            onClick={() => setVisible(!visible)}
+          />
+          {visible ? (
+            <CustomOverlayMap position={markerPosition} xAnchor={0} yAnchor={1}>
+              <InfoModal />
+            </CustomOverlayMap>
+          ) : null}
+        </Map>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center">
           <div className="w-[37px] h-[65px] bg-[#3a3a3a] rounded-lg flex items-center">
             <img src={ArrowLeft} />
           </div>
@@ -40,8 +56,6 @@ const AllMonitoringView = ({ navigate }: PropsType) => {
           <div className="w-[37px] h-[65px] bg-[#3a3a3a] rounded-lg flex items-center">
             <img src={ArrowRight} />
           </div>
-
-          {/* <InfoModal /> */}
         </div>
       </div>
     </div>
