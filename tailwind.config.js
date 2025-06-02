@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         sans: ["Pretendard", "sans-serif"],
       },
+      height: {
+        "real-screen": "calc(var(--vh) * 100 - 139px)",
+      },
     },
   },
   plugins: [],

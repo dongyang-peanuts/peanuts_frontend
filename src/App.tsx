@@ -5,8 +5,17 @@ import AllMonitoringContainer from "./pages/all-monitoring/AllMonitoringContaine
 import MonitoringDetailContainer from "./pages/monitoring-detail/MonitoringDetailContainer";
 import UserInfoContainer from "./pages/userInfo/UserInfoContainer";
 import UserInfoDetailContainer from "./pages/userInfoDetail/UserInfoDetailContainer";
+import { useEffect } from "react";
 
 function App() {
+  function setScreenSize() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
+  useEffect(() => {
+    setScreenSize();
+  }, []);
+
   return (
     <Routes>
       {/*로그인 화면 - 시작화면 */}

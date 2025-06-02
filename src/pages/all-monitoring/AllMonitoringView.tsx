@@ -26,8 +26,9 @@ const AllMonitoringView = ({ navigate }: PropsType) => {
       <div className="relative w-full">
         <Map
           center={{ lat: 37.450701, lng: 127.570667 }}
-          style={{ width: "100%", height: "83.3vh" }}
+          style={{ width: "100%" }}
           level={10}
+          className="h-real-screen"
         >
           <MapMarker
             position={markerPosition}

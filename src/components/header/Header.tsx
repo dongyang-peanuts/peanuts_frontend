@@ -1,8 +1,20 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const adminId = sessionStorage.getItem("id");
+  const navigate = useNavigate();
+
   const logOut = () => {
-    // axios.post();
+    axios
+      .post(`/admin/logout/${adminId}`)
+      .then((res) => {
+        sessionStorage.removeItem("id");
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -13,7 +25,9 @@ const Header = () => {
           <li className="text-sm font-semibold list-none text-[#6A9850] mr-[53px]">
             대시보드
           </li>
-          <li className="text-sm font-semibold list-none">로그아웃</li>
+          <li onClick={logOut} className="text-sm font-semibold list-none">
+            로그아웃
+          </li>
         </div>
       </div>
     </div>
