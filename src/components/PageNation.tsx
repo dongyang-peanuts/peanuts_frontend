@@ -7,7 +7,7 @@ interface PropsType {
   onPageChange: (page: number) => void;
 }
 
-const Pagination = ({ totalPages, currentPage, onPageChange }: PropsType) => {
+const PageNation = ({ totalPages, currentPage, onPageChange }: PropsType) => {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   const handlePrevious = () => {
@@ -61,4 +61,4 @@ const Pagination = ({ totalPages, currentPage, onPageChange }: PropsType) => {
   );
 };
 
-export default Pagination;
+export default PageNation;

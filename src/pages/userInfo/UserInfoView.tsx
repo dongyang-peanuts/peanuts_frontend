@@ -6,6 +6,7 @@ import TableHeader from "@/components/table/TableHeader";
 
 import SearchIcon from "@/assets/icons/Search.png";
 import PageNation from "@/components/PageNation";
+import { UserList } from "@/models/userInfo.model";
 
 const data = [
   [
@@ -153,12 +154,14 @@ const data = [
     },
   ],
 ];
+
 interface PropsType {
   currentPage: number;
+  data: Array<UserList>;
   setCurrentPage: (page: number) => void;
 }
 
-const UserInfoView = ({ currentPage, setCurrentPage }: PropsType) => {
+const UserInfoView = ({ currentPage, data, setCurrentPage }: PropsType) => {
   return (
     <div className="bg-[#F6F7FB] min-h-screen pb-14">
       <Header />
@@ -192,7 +195,7 @@ const UserInfoView = ({ currentPage, setCurrentPage }: PropsType) => {
           <div>
             <table className="w-[1116px] border-[#d9d9d9] rounded-lg overflow-hidden">
               <TableHeader data={["이메일", "주소", "기기번호", "가입일"]} />
-              {data[0].map((item) => (
+              {data.map((item) => (
                 <TableBody data={item} />
               ))}
             </table>

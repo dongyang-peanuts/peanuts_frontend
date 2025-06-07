@@ -7,7 +7,7 @@ const Header = () => {
 
   const logOut = () => {
     axios
-      .post(`/admin/logout/${adminId}`)
+      .post(`http://kongback.kro.kr:8080/admin/logout/${adminId}`)
       .then((res) => {
         sessionStorage.removeItem("id");
         navigate("/");

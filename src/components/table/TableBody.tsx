@@ -1,8 +1,8 @@
-import UserInfo from "@/models/userInfo.model";
+import UserInfo, { UserList } from "@/models/userInfo.model";
 import { useNavigate } from "react-router-dom";
 
 interface PropsType {
-  data: UserInfo;
+  data: UserList;
 }
 
 const TableBody = ({ data }: PropsType) => {
@@ -19,7 +19,7 @@ const TableBody = ({ data }: PropsType) => {
           }}
           className="text-center text-[#707070]"
         >
-          {data.email}
+          {data.userEmail}
         </td>
         <td
           onClick={() => {
@@ -27,7 +27,7 @@ const TableBody = ({ data }: PropsType) => {
           }}
           className="text-center text-[#707070]"
         >
-          {data.address}
+          {data.userAddr}
         </td>
         <td
           onClick={() => {
@@ -35,7 +35,7 @@ const TableBody = ({ data }: PropsType) => {
           }}
           className="text-center text-[#707070]"
         >
-          {data.adviceNo}
+          {data.proNum}
         </td>
         <td
           onClick={() => {
@@ -43,7 +43,8 @@ const TableBody = ({ data }: PropsType) => {
           }}
           className="text-center text-[#707070]"
         >
-          {data.createdAt}
+          2024.04.01
+          {/* {data.createdAt} */}
         </td>
       </tr>
     </tbody>

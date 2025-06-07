@@ -13,11 +13,11 @@ export default defineConfig({
   },
   server: {
     port: 5174,
-    // proxy: {
-    //   "/api": {
-    //     target: "http://kongback.kro.kr:8080",
-    //     changeOrigin: true,
-    //   },
-    //},
+    proxy: {
+      "/api": {
+        target: "http://kongback.kro.kr:8080",
+        changeOrigin: true,
+      },
+    },
   },
 });

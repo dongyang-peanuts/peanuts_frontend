@@ -11,7 +11,7 @@ const LoginContainer = () => {
 
   const login = () => {
     axios
-      .post("/admin/login", data, {
+      .post("http://kongback.kro.kr:8080/admin/login", data, {
         withCredentials: true,
       })
       .then((res) => {
