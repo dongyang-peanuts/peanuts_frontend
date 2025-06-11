@@ -11,10 +11,24 @@ import { UserList } from "@/models/userInfo.model";
 interface PropsType {
   currentPage: number;
   data: Array<UserList>;
+  isAllChecked: boolean;
+  checkedUserKeys: number[];
   setCurrentPage: (page: number) => void;
+  handleCheckAll: (checked: boolean) => void;
+  handleCheckOne: (userKey: number, checked: boolean) => void;
+  handleDelete: () => void;
 }
 
-const UserInfoView = ({ currentPage, data, setCurrentPage }: PropsType) => {
+const UserInfoView = ({
+  currentPage,
+  data,
+  isAllChecked,
+  checkedUserKeys,
+  setCurrentPage,
+  handleCheckAll,
+  handleCheckOne,
+  handleDelete,
+}: PropsType) => {
   return (
     <div className="bg-[#F6F7FB] min-h-screen pb-14">
       <Header />
@@ -42,14 +56,25 @@ const UserInfoView = ({ currentPage, data, setCurrentPage }: PropsType) => {
               onClick={null}
             />
           </div>
-          <button className="mt-[14px] mb-2 border border-[#6A9850] rounded-lg w-[95px] h-[38px] text-[#6A9850]">
+          <button
+            onClick={handleDelete}
+            className="mt-[14px] mb-2 border border-[#6A9850] rounded-lg w-[95px] h-[38px] text-[#6A9850]"
+          >
             삭제
           </button>
           <div>
             <table className="w-[1116px] border-[#d9d9d9] rounded-lg overflow-hidden">
-              <TableHeader data={["이메일", "주소", "기기번호", "가입일"]} />
+              <TableHeader
+                isAllChecked={isAllChecked}
+                onCheckAll={handleCheckAll}
+                data={["이메일", "주소", "기기번호", "가입일"]}
+              />
               {data.map((item) => (
-                <TableBody data={item} />
+                <TableBody
+                  isChecked={checkedUserKeys.includes(item.userKey)}
+                  onCheck={handleCheckOne}
+                  data={item}
+                />
               ))}
             </table>
           </div>
