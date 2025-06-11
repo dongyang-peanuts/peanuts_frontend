@@ -26,6 +26,7 @@ const LoginContainer = () => {
         console.log(err);
       });
   };
+
   return (
     <LoginView
       navigate={navigate}

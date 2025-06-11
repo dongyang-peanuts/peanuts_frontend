@@ -85,7 +85,7 @@ const UserInfoDetailView = ({ data }: PropsType) => {
             <div className="flex">
               <div className="text-base text-[#5d5d5d] mr-[65px]">예상질병</div>
               <div className="mr-[33px]">
-                <div className="mb-[21px]">
+                <div className="mb-[21px] w-[95px]">
                   {data.patients[0].infos[0].paDise}
                 </div>
               </div>
@@ -95,8 +95,10 @@ const UserInfoDetailView = ({ data }: PropsType) => {
                 복용중인 약
               </div>
               <div>
-                <div className="mb-[21px]">
-                  {data.patients[0].infos[0].paMedi}
+                <div className="mb-[21px] w-[166px]">
+                  {data.patients[0].infos[0].paMedi
+                    ? data.patients[0].infos[0].paMedi
+                    : "없음"}
                 </div>
               </div>
             </div>

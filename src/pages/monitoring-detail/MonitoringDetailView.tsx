@@ -5,48 +5,20 @@ import Pagination from "@/components/PageNation";
 
 import ArrowLeft from "@/assets/icons/ArrowLeftBlack.png";
 import ArrowRight from "@/assets/icons/ArrowRightBlack.png";
-
-const data = [
-  {
-    id: 1,
-    state: "비상",
-    content: "사용자에게 낙상이 감지되었습니다.",
-    time: "13:29:17",
-  },
-  {
-    id: 2,
-    state: "경고",
-    content: "사용자에게 낙상이 감지되었습니다.",
-    time: "13:29:17",
-  },
-  {
-    id: 3,
-    state: "주의",
-    content: "사용자에게 낙상이 감지되었습니다.",
-    time: "13:29:17",
-  },
-  {
-    id: 4,
-    state: "경고",
-    content: "사용자에게 낙상이 감지되었습니다.",
-    time: "13:29:17",
-  },
-  {
-    id: 5,
-    state: "경고",
-    content: "사용자에게 낙상이 감지되었습니다.",
-    time: "13:29:17",
-  },
-];
+import { getHistory } from "@/models/history";
 
 interface PropsType {
   date: Date;
+  data?: any;
+  history?: getHistory[];
   currentPage: number;
   setCurrentPage: (page: number) => void;
 }
 
 const MonitoringDetailView = ({
   date,
+  data,
+  history,
   currentPage,
   setCurrentPage,
 }: PropsType) => {
@@ -71,9 +43,11 @@ const MonitoringDetailView = ({
               <input type="date" className="hidden" />
               <img className="w-6" src={ArrowRight} />
             </div>
-            {data.map((item) => (
-              <HistoryItem data={item} />
-            ))}
+            {history.length > 0 ? (
+              history.map((item) => <HistoryItem data={item} />)
+            ) : (
+              <div>히스토리 값이 존재하지 않습니다</div>
+            )}
             <Pagination
               totalPages={5}
               currentPage={currentPage}
