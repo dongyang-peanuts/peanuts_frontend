@@ -45,10 +45,11 @@ const UserInfoContainer = () => {
         .then((res) => {
           console.log("삭제에 성공하였습니다", res);
           setCheckedUserKeys([]);
-          alert("사용자 삭제를 성공하였습니다");
+          alert("사용자 삭제를 성공하였습니다.");
         })
         .catch((err) => {
           console.log(err);
+          alert("사용자 삭제를 실패하였습니다.");
         });
     });
   };
