@@ -8,7 +8,7 @@ const UserInfoContainer = () => {
 
   useEffect(() => {
     axios
-      .get("http://kongback.kro.kr:8080/admin/users")
+      .get("/admin/users")
       .then((res) => {
         console.log(res);
         setUserList(res.data);

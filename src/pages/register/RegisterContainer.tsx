@@ -12,7 +12,7 @@ const RegisterContainer = () => {
   const register = () => {
     if (pwc) {
       axios
-        .post("http://kongback.kro.kr:8080/admin/signup", data)
+        .post("/admin/signup", data)
         .then((res) => {
           console.log(res);
           navigate("/");

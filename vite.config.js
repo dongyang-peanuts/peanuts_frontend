@@ -14,7 +14,7 @@ export default defineConfig({
   server: {
     port: 5174,
     proxy: {
-      "/api": {
+      "/admin": {
         target: "http://kongback.kro.kr:8080",
         changeOrigin: true,
       },

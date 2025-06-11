@@ -12,7 +12,7 @@ const UserInfoDetailContainer = () => {
 
   useEffect(() => {
     axios
-      .get(`http://kongback.kro.kr:8080/admin/users/${userKey}`)
+      .get(`/admin/users/${userKey}`)
       .then((res) => {
         console.log(res.data);
         setData(res.data);
