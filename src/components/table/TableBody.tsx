@@ -1,3 +1,4 @@
+import { dateFormat } from "@/hook/dateFormat";
 import UserInfo, { UserList } from "@/models/userInfo.model";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +16,7 @@ const TableBody = ({ data }: PropsType) => {
         </td>
         <td
           onClick={() => {
-            navigate("/userinfo/detail");
+            navigate(`/userinfo/detail?userKey=${data.userKey}`);
           }}
           className="text-center text-[#707070]"
         >
@@ -23,7 +24,7 @@ const TableBody = ({ data }: PropsType) => {
         </td>
         <td
           onClick={() => {
-            navigate("/userinfo/detail");
+            navigate(`/userinfo/detail?userKey=${data.userKey}`);
           }}
           className="text-center text-[#707070]"
         >
@@ -31,7 +32,7 @@ const TableBody = ({ data }: PropsType) => {
         </td>
         <td
           onClick={() => {
-            navigate("/userinfo/detail");
+            navigate(`/userinfo/detail?userKey=${data.userKey}`);
           }}
           className="text-center text-[#707070]"
         >
@@ -39,12 +40,11 @@ const TableBody = ({ data }: PropsType) => {
         </td>
         <td
           onClick={() => {
-            navigate("/userinfo/detail");
+            navigate(`/userinfo/detail?userKey=${data.userKey}`);
           }}
           className="text-center text-[#707070]"
         >
-          2024.04.01
-          {/* {data.createdAt} */}
+          {dateFormat(data.signupDate)}
         </td>
       </tr>
     </tbody>

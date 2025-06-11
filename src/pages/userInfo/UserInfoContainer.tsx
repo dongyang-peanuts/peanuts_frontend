@@ -10,8 +10,8 @@ const UserInfoContainer = () => {
     axios
       .get("http://kongback.kro.kr:8080/admin/users")
       .then((res) => {
-        setUserList(res.data);
         console.log(res);
+        setUserList(res.data);
       })
       .catch((err) => {
         console.log(err);

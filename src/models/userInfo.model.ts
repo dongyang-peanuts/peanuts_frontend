@@ -4,9 +4,11 @@ export default interface AdminInfo {
 }
 
 export interface UserList {
-  proNum: string;
-  userAddr: string;
+  userKey: number;
   userEmail: string;
-  userNumber: string;
   userPwd: string;
+  userAddr: string;
+  userNumber: string;
+  proNum: string;
+  signupDate: string;
 }
