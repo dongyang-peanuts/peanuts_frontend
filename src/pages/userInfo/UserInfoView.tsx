@@ -17,6 +17,8 @@ interface PropsType {
   handleCheckAll: (checked: boolean) => void;
   handleCheckOne: (userKey: number, checked: boolean) => void;
   handleDelete: () => void;
+  setSearch: (text: string) => void;
+  onClickSearchBtn: () => void;
 }
 
 const UserInfoView = ({
@@ -28,6 +30,8 @@ const UserInfoView = ({
   handleCheckAll,
   handleCheckOne,
   handleDelete,
+  setSearch,
+  onClickSearchBtn,
 }: PropsType) => {
   return (
     <div className="bg-[#F6F7FB] min-h-screen pb-14">
@@ -43,6 +47,7 @@ const UserInfoView = ({
               <input
                 type="text"
                 className="border-none w-[100%] h-[48px] outline-none bg-[#F6F7FB] border pl-2"
+                onChange={(e) => setSearch(e.target.value)}
               />
               <img src={SearchIcon} className="w-7 h-7 " />
             </div>
@@ -53,7 +58,7 @@ const UserInfoView = ({
               backgroundColor="#6A9850"
               width="166px"
               height="56px"
-              onClick={null}
+              onClick={onClickSearchBtn}
             />
           </div>
           <button
@@ -69,13 +74,14 @@ const UserInfoView = ({
                 onCheckAll={handleCheckAll}
                 data={["이메일", "주소", "기기번호", "가입일"]}
               />
-              {data.map((item) => (
-                <TableBody
-                  isChecked={checkedUserKeys.includes(item.userKey)}
-                  onCheck={handleCheckOne}
-                  data={item}
-                />
-              ))}
+              {data &&
+                data.map((item) => (
+                  <TableBody
+                    isChecked={checkedUserKeys.includes(item.userKey)}
+                    onCheck={handleCheckOne}
+                    data={item}
+                  />
+                ))}
             </table>
           </div>
           <PageNation

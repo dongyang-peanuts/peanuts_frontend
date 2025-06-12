@@ -11,17 +11,9 @@ interface PropsType {
   date: Date;
   data?: any;
   history?: getHistory[];
-  currentPage: number;
-  setCurrentPage: (page: number) => void;
 }
 
-const MonitoringDetailView = ({
-  date,
-  data,
-  history,
-  currentPage,
-  setCurrentPage,
-}: PropsType) => {
+const MonitoringDetailView = ({ date, data, history }: PropsType) => {
   return (
     <div className="bg-[#F6F7FB] min-h-screen pb-[152px]">
       <Header />
@@ -43,16 +35,13 @@ const MonitoringDetailView = ({
               <input type="date" className="hidden" />
               <img className="w-6" src={ArrowRight} />
             </div>
-            {history.length > 0 ? (
-              history.map((item) => <HistoryItem data={item} />)
-            ) : (
-              <div>히스토리 값이 존재하지 않습니다</div>
-            )}
-            <Pagination
-              totalPages={5}
-              currentPage={currentPage}
-              onPageChange={(page) => setCurrentPage(page)}
-            />
+            <div className="h-[359px] overflow-auto">
+              {history.length ? (
+                history.map((item) => <HistoryItem data={item} />)
+              ) : (
+                <div>히스토리 값이 존재하지 않습니다</div>
+              )}
+            </div>
           </div>
         </div>
         <div className="mt-[37px] ">
@@ -61,42 +50,42 @@ const MonitoringDetailView = ({
             <div className="flex flex-col justify-between mr-[33px]">
               <div className="flex text-sm font-bold">
                 <p className="w-[53px] text-center mr-[34px]">나이</p>
-                <p className="w-[45px]">89세</p>
+                <p className="w-[45px]">{data.patients[0].paAge}세</p>
               </div>
               <div className="flex text-sm font-bold">
                 <p className="w-[53px] text-center mr-[34px]">키</p>
-                <p className="w-[45px]">168cm</p>
+                <p className="w-[45px]">{data.patients[0].paHei}cm</p>
               </div>
               <div className="flex text-sm font-bold">
                 <p className="w-[53px] text-center mr-[34px]">체중</p>
-                <p className="w-[45px]">70kg</p>
+                <p className="w-[45px]">{data.patients[0].paWei}kg</p>
               </div>
               <div className="flex text-sm font-bold">
                 <p className="w-[53px] text-center mr-[34px]">낙상 횟수</p>
-                <p className="w-[45px]">총 3회</p>
+                <p className="w-[45px]">
+                  총 {data.patients[0].infos[0].paFact}회
+                </p>
               </div>
               <div className="flex text-sm font-bold">
                 <p className="w-[53px] text-center mr-[34px]">욕창 횟수</p>
-                <p className="w-[45px]">총 0회</p>
+                <p className="w-[45px]">
+                  총 {data.patients[0].infos[0].paPrct}회
+                </p>
               </div>
             </div>
             <div className="w-[1px] h-[156px] bg-[#d9d9d9] my-auto mr-[33px]"></div>
             <div className="flex flex-col justify-between mr-[33px]">
               <div className="flex text-sm font-bold">
-                <p className="w-[80px] text-center mr-[34px]">질병</p>
-                <p className="w-[59px]">관절염</p>
-              </div>
-              <div className="flex text-sm font-bold">
                 <p className="w-[80px] text-center mr-[34px]">질병의 중증도</p>
-                <p className="w-[59px]">중증</p>
+                <p className="w-[100px]">{data.patients[0].infos[0].paDise}</p>
               </div>
               <div className="flex text-sm font-bold">
                 <p className="w-[80px] text-center mr-[34px]">하루 운동 시간</p>
-                <p className="w-[59px]">1시간 이내</p>
+                <p className="w-[100px]">{data.patients[0].infos[0].paExti}</p>
               </div>
               <div className="flex text-sm font-bold">
                 <p className="w-[80px] text-center mr-[34px]">현재 거동 상태</p>
-                <p className="w-[59px]">지팡이</p>
+                <p className="w-[100px]"> {data.patients[0].infos[0].paBest}</p>
               </div>
             </div>
             <div className="w-[1px] h-[156px] bg-[#d9d9d9] my-auto mr-[33px]"></div>
@@ -104,23 +93,24 @@ const MonitoringDetailView = ({
               <div className="flex text-sm font-bold">
                 <p className="w-[88px] text-center mr-[34px]">복용중인 약</p>
                 <p className="w-[400px] overflow-hidden text-ellipsis whitespace-nowrap">
-                  이부프로펜(Advil), 나프록센(Aleve), 멜록시캄(Mobic),
-                  셀레콕시브(Celebrex)
+                  {data.patients[0].infos[0].paMedi
+                    ? data.patients[0].infos[0].paMedi
+                    : "없음"}
                 </p>
               </div>
               <div className="flex text-sm font-bold">
                 <p className="w-[88px] text-center mr-[34px]">거주 주소</p>
-                <p>중증</p>
+                <p>{data.userAddr}</p>
               </div>
               <div className="flex text-sm font-bold">
                 <p className="w-[88px] text-center mr-[34px]">
                   보호자 전화번호
                 </p>
-                <p>010-7132-8582</p>
+                <p>{data.userNumber}</p>
               </div>
               <div className="flex text-sm font-bold">
                 <p className="w-[88px] text-center mr-[34px]">보호자 이메일</p>
-                <p>chhari0708@gmail.com</p>
+                <p>{data.userEmail}</p>
               </div>
             </div>
           </div>

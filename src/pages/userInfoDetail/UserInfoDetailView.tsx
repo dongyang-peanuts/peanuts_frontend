@@ -85,9 +85,7 @@ const UserInfoDetailView = ({ data }: PropsType) => {
             <div className="flex">
               <div className="text-base text-[#5d5d5d] mr-[65px]">예상질병</div>
               <div className="mr-[33px]">
-                <div className="mb-[21px] w-[95px]">
-                  {data.patients[0].infos[0].paDise}
-                </div>
+                <div className="mb-[21px] w-[95px]">정보 없음</div>
               </div>
             </div>
             <div className="flex mr-[44px]">
@@ -95,7 +93,7 @@ const UserInfoDetailView = ({ data }: PropsType) => {
                 복용중인 약
               </div>
               <div>
-                <div className="mb-[21px] w-[166px]">
+                <div className="mb-[21px] w-[100px]">
                   {data.patients[0].infos[0].paMedi
                     ? data.patients[0].infos[0].paMedi
                     : "없음"}
@@ -115,13 +113,17 @@ const UserInfoDetailView = ({ data }: PropsType) => {
                 <div className="text-base text-[#5d5d5d] w-[70px] mr-[102px]">
                   중증도
                 </div>
-                <div className="w-[45px]">중증</div>
+                <div className="w-[100px]">
+                  {data.patients[0].infos[0].paDise
+                    ? data.patients[0].infos[0].paDise
+                    : "없음"}
+                </div>
               </div>
               <div className="flex mb-[21px]">
                 <div className="text-base text-[#5d5d5d] w-[70px] mr-[102px]">
                   거동 상태
                 </div>
-                <div className="w-[50px]">
+                <div className="w-[100px]">
                   {data.patients[0].infos[0].paBest}
                 </div>
               </div>

@@ -10,7 +10,7 @@ const MonitoringDetailContainer = () => {
 
   useEffect(() => {
     axios
-      .get(`/admin/users/9`)
+      .get(`/admin/users/17`)
       .then((res) => {
         console.log(res.data);
         setData(res.data);
@@ -20,7 +20,7 @@ const MonitoringDetailContainer = () => {
       });
 
     axios
-      .get(`/admin/users/alerts/9`)
+      .get(`/admin/users/alerts/17`)
       .then((res) => {
         setHistory(res.data);
       })
@@ -29,15 +29,11 @@ const MonitoringDetailContainer = () => {
       });
   }, []);
 
-  return (
-    <MonitoringDetailView
-      date={date}
-      data={data}
-      history={history}
-      currentPage={currentPage}
-      setCurrentPage={setCurrentPage}
-    />
-  );
+  if (!data) {
+    return <div>로딩중입니다...</div>;
+  }
+
+  return <MonitoringDetailView date={date} data={data} history={history} />;
 };
 
 export default MonitoringDetailContainer;

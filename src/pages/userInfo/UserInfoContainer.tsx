@@ -6,6 +6,9 @@ const UserInfoContainer = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [userList, setUserList] = useState([]);
   const [checkedUserKeys, setCheckedUserKeys] = useState<number[]>([]);
+  const [search, setSearch] = useState<string>("");
+  const isAllChecked =
+    userList.length > 0 && checkedUserKeys.length === userList.length;
 
   useEffect(() => {
     axios
@@ -19,9 +22,6 @@ const UserInfoContainer = () => {
       });
   }, [checkedUserKeys]);
 
-  const isAllChecked =
-    userList.length > 0 && checkedUserKeys.length === userList.length;
-
   const handleCheckAll = (checked: boolean) => {
     if (checked) {
       setCheckedUserKeys(userList.map((item) => item.userKey));
@@ -34,6 +34,10 @@ const UserInfoContainer = () => {
     setCheckedUserKeys((prev) =>
       checked ? [...prev, userKey] : prev.filter((key) => key !== userKey)
     );
+  };
+
+  const onClickSearchBtn = () => {
+    console.log(search);
   };
 
   const handleDelete = () => {
@@ -54,16 +58,27 @@ const UserInfoContainer = () => {
     });
   };
 
+  const filteredData = userList.filter((item) => {
+    if (!search) return true;
+    return item.userEmail?.toLowerCase().includes(search.toLowerCase());
+  });
+
+  if (!userList) {
+    return <div>로딩중....</div>;
+  }
+
   return (
     <UserInfoView
       currentPage={currentPage}
-      data={userList}
+      data={filteredData}
       setCurrentPage={setCurrentPage}
       isAllChecked={isAllChecked}
       checkedUserKeys={checkedUserKeys}
       handleCheckAll={handleCheckAll}
       handleCheckOne={handleCheckOne}
       handleDelete={handleDelete}
+      setSearch={setSearch}
+      onClickSearchBtn={onClickSearchBtn}
     />
   );
 };
