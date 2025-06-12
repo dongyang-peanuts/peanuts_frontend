@@ -84,11 +84,11 @@ const UserInfoView = ({
                 ))}
             </table>
           </div>
-          <PageNation
+          {/* <PageNation
             totalPages={5}
             currentPage={currentPage}
             onPageChange={(page) => setCurrentPage(page)}
-          />
+          /> */}
         </div>
       </div>
     </div>
